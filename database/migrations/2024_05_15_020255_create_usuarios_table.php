@@ -16,7 +16,8 @@ return new class extends Migration
         Schema::create('usuarios', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string("tajeta");
+            $table->string("tarjeta");
+            $table->string("colonia");
         });
     }
 
