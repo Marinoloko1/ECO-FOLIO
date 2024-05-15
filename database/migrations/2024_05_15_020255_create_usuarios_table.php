@@ -17,7 +17,11 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string("tarjeta");
-            $table->string("colonia");
+            $table->string("nombre");
+            $table->string("carrera");
+            $table->string("matricula");
+            $table->integer("usos");
+
         });
     }
 
