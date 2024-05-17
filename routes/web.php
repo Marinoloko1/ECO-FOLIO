@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\PaginaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('usuarios');
 });
+
+Route::get("usuarios/{id}", [PaginaController::class, "verUsuario"]);
+
+Route::get("usuarios/{id}", [PaginaController::class, "verUsuarios"]);
