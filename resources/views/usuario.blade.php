@@ -112,17 +112,20 @@
                     <tr>
                         <th>N. de tarjeta</th>
                         <th>Nombre del usuario</th>
+                        <th>Carrera</th>
                         <th>Matricula</th>
                         <th>N. de usos</th>
-                        <th></th>
+                        <th>Intentos restantes</th>
                     </tr>
                 </thead>
             <tbody>
                 <tr>
                     <td>{{ $usuario->tarjeta }}</td>
                     <td>{{ $usuario->nombre }}</td>
+                    <td>{{ $usuario->carrera }}</td>
                     <td>{{ $usuario->matricula }}</td>
                     <td>{{ $usuario->usos }}</td>
+                    <td>{{ $usuario->intentos }}</td>
                     <td><a href="/usuarios{{$usuario->all}}">Regresar</a></td>
                 </tr>
             </tbody>
