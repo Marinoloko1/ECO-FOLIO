@@ -27,7 +27,7 @@
 
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 255, 150);
+            box-shadow: 0 0 10px rgba(0, 255, 0, 150);
         }
 
         h1 {
