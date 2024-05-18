@@ -115,7 +115,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                @foreach($usuarios as $usuario)
+                @foreach($usuario as $usuarios)
                     <tr>
                         <th>     {{ $usuario->tarjeta }}</th>
                         <th>     {{ $usuario->nombre }}</th>
