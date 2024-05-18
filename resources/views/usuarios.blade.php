@@ -75,7 +75,7 @@
         input[type="submit"]:hover {
             background-color: #45a049; 
         }
-        #agregarUsuario
+        agregarUsuario.
         {
             color: white;
         }
