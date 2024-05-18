@@ -122,7 +122,7 @@
             var verMasLink = document.createElement("a");
             verMasLink.textContent = "Ver más";
             verMasLink.className = "ver-mas";
-            verMasLink.href = "otra_pagina.html?usuario=" + encodeURIComponent(nombre); 
+            verMasLink.href = "C:\Users\x\Desktop\proyectos\ECO-FOLIO\resources\views\usuario.blade.php" + encodeURIComponent(nombre); 
             verMasTd.appendChild(verMasLink);
             usuarioRow.appendChild(verMasTd);
 
