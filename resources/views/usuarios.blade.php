@@ -131,7 +131,7 @@
             if (registroTarjetas[numeroTarjeta]) {
                 registroTarjetas[numeroTarjeta]++;
                 if (registroTarjetas[numeroTarjeta] >= 3) {
-                    alert("Ya no puede registrarse más veces con esta tarjeta.");
+                    alert("A alcanzado el maximo de usos por hoy.");
                 }
             } else {
                 registroTarjetas[numeroTarjeta] = 1;
@@ -139,8 +139,8 @@
         }
 
         agregarUsuario("123", "Maria Fernanda", "1 de 3", "1234567890");
-        agregarUsuario("123", "Angel Escamilla", "1 de 3", "1234567890");
-        agregarUsuario("123", "Juan Gallardo", "1 de 3", "1234567890");
+        agregarUsuario("123", "Maria Fernanda", "1 de 3", "1234567890");
+        agregarUsuario("123", "Maria Fernanda", "1 de 3", "1234567890");
     </script>
 </body>
 </html>
