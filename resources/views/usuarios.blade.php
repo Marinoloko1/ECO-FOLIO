@@ -11,15 +11,19 @@
 body 
 {
     font-family: Arial, sans-serif;
+    background-image: url("https://www.xtrafondos.com/wallpapers/resized/hoja-verde-con-gotas-11773.jpg?s=large");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+menu
+{
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 10;
-    background: #1E9600;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #FF0000, #FFF200, #1E9600);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left, #FF0000, #FFF200, #1E9600); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 nav
 {
@@ -90,10 +94,10 @@ nav a:nth-child(5):hover~span
     margin: 110px auto 50px auto; 
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(255, 0, 255, 150);
-    background: #1E9600;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #FF0000, #FFF200, #1E9600);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #FF0000, #FFF200, #1E9600); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 150);
+    background: #1D976C;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #93F9B9, #1D976C);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #93F9B9, #1D976C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 h1 {
@@ -168,12 +172,12 @@ tbody tr
     </header>
 
     <nav>
-        <a href="">Inicio</a>
+        <a href="" id="menu">Inicio</a>
         <a href="">Inicio</a>
         <a href="">Inicio</a>
         <a href="">Inicio</a>
         <span></span>
-    </nav>
+    </nav> 
 
     <main>
 
@@ -198,7 +202,7 @@ tbody tr
                         <th>     {{ $usuario->nombre }}</th>
                         <th>     {{ $usuario->usos }}</th>
                         <th>     {{ $usuario->tarjeta }}</th>
-                        <th>     {{ $usuario->usos }}</th>
+                        <th>     {{ $usuario->intentos }}</th>
                         <th><a href="/usuarios/{{$usuario->id}}">Ver más</a>  </th>
                     </tr>
                
