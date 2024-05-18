@@ -199,14 +199,14 @@ tbody tr
                 </thead>
 
                 <tbody>
-                @foreach($usuarios as $usuario);
+                @foreach($usuarios as $usuario)
                     <tr>
                         <td>     {{ $usuario->grupo}}</td>
                         <td>     {{ $usuario->nombre }}</td>
                         <td>     {{ $usuario->usos }}</td>
                         <td>     {{ $usuario->tarjeta }}</td>
                         <td>     {{ $usuario->intentos }}</td>
-                        <td><a href="\usuario\{{$usuario->$id}}"> Ver más</a>  </td>
+                        <td><a href="/usuario{{$usuario->$id}}"> Ver más</a>  </td>
                     </tr>
                 
 
