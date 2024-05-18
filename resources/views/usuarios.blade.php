@@ -75,12 +75,12 @@
 
         .ver-mas {
             cursor: pointer;
-            color: #007bff;
+            color: #007bff; /* Color azul para indicar que es un enlace */
             text-decoration: underline;
         }
 
         .ver-mas:hover {
-            color: #0056b3;
+            color: #0056b3; /* Cambio de color al pasar el cursor por encima */
         }
     </style>
 </head>
@@ -107,12 +107,14 @@
     <script>
         var registroTarjetas = {};
 
-        function agregarUsuario(id, nombre, usoDispensador, numeroTarjeta, intentosRestantes) {
+        function agregarUsuario(id, nombre, usoDispensador, numeroTarjeta, intentosRestantes) 
+        {
             var usuariosTbody = document.getElementById("usuarios");
 
             var usuarioRow = document.createElement("tr");
             var datosUsuario = [id, nombre, usoDispensador, numeroTarjeta, intentosRestantes];
-            datosUsuario.forEach(function(dato) {
+            datosUsuario.forEach(function(dato) 
+            {
                 var td = document.createElement("td");
                 td.textContent = dato;
                 usuarioRow.appendChild(td);
@@ -128,28 +130,34 @@
 
             usuariosTbody.appendChild(usuarioRow);
 
-            if (intentosRestantes <= 0) {
+            if (intentosRestantes <= 0) 
+            {
                 usuarioRow.style.backgroundColor = "#ffcccc"; 
             }
         }
 
-        function actualizarIntentosRestantes(numeroTarjeta) {
-            if (registroTarjetas[numeroTarjeta]) {
+        function actualizarIntentosRestantes(numeroTarjeta) 
+        {
+            if (registroTarjetas[numeroTarjeta]) 
+            {
                 registroTarjetas[numeroTarjeta]--;
                 return registroTarjetas[numeroTarjeta];
-            } else {
+            } else 
+            {
                 registroTarjetas[numeroTarjeta] = 3;
                 return registroTarjetas[numeroTarjeta];
             }
         }
 
-        function tarjetaNFCdetectada(numeroTarjeta) {
+        function tarjetaNFCdetectada(numeroTarjeta) 
+        {
             document.getElementById("numeroTarjeta").value = numeroTarjeta;
 
             document.getElementById("formulario").submit();
         }
 
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function() 
+        {
             setTimeout(function() {
                 tarjetaNFCdetectada("1234567890");
             }, 1500);
