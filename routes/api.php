@@ -27,4 +27,5 @@ Route::put("/usuarios",[UsuarioController::class,"update"]);
 
 Route::delete("/usuarios",[UsuarioController::class,"destroy"]);
 
-Route::get("/registros/{id}",[RegistroController::class,"show"]);
+Route::get("/registros/{id}",[RegistroController::class,"show"]); 
+
