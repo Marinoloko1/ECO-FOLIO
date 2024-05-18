@@ -100,6 +100,8 @@
     </main>
 
     <script>
+        var registroTarjetas = {}; 
+
         function agregarUsuario(id, nombre, usoDispensador, numeroTarjeta) {
             var usuariosDiv = document.getElementById("usuarios");
 
@@ -125,6 +127,15 @@
             tabla.appendChild(usuarioRow);
 
             usuariosDiv.appendChild(tabla);
+
+            if (registroTarjetas[numeroTarjeta]) {
+                registroTarjetas[numeroTarjeta]++;
+                if (registroTarjetas[numeroTarjeta] >= 3) {
+                    alert("Ya no puede registrarse más veces con esta tarjeta.");
+                }
+            } else {
+                registroTarjetas[numeroTarjeta] = 1;
+            }
         }
 
         agregarUsuario("123", "Maria Fernanda", "1 de 5", "1234567890");
