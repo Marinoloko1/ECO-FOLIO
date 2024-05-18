@@ -92,6 +92,7 @@
 </head>
 <body>
     <header></header>
+    <h1>{{$usuario->nombre}}</h1>
     <main>
         <button id="regresar" href="\resources\views\usuario.blade.php"> Regresar </button>
         <div class="container">
@@ -110,34 +111,6 @@
             </table>
         </div>
     </main>
-    <script>
-        var registroTarjetas = {};
-
-        function agregarUsuario(id, nombre, usoDispensador, numeroTarjeta) {
-            var usuariosTbody = document.getElementById("usuarios");
-
-            var usuarioRow = docume"nt.createElement("tr");
-            var datosUsuario = [id, nombre, usoDispensador, numeroTarjeta];
-            datosUsuario.forEach(function(dato) {
-                var td = document.createElement("td");
-                td.textContent = dato;
-                usuarioRow.appendChild(td);
-            });
-            usuariosTbody.appendChild(usuarioRow);
-
-            if (registroTarjetas[numeroTarjeta]) {
-                registroTarjetas[numeroTarjeta]++;
-                if (registroTarjetas[numeroTarjeta] >= 3) {
-                    alert("Ha alcanzado el máximo de usos por hoy.");
-                }
-            } else {
-                registroTarjetas[numeroTarjeta] = 1;
-            }
-        }
-
-        agregarUsuario("123", "Maria Fernanda", "1 de 3", "1234567890");
-        agregarUsuario("123", "Maria Fernanda", "2 de 3", "1234567890");
-        agregarUsuario("123", "Maria Fernanda", "3 de 3", "1234567890");
-    </script>
+    
 </body>
 </html>
