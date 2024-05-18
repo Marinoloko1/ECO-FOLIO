@@ -19,4 +19,4 @@ Route::get('/', function () {
 
 Route::get("usuarios/{id}", [PaginaController::class, "verUsuario"]);
 
-Route::get("usuario/{id}", [PaginaController::class, "verUsuarios"]);
+Route::get("usuarios/{id}", [PaginaController::class, "verUsuarios"]);
