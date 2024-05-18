@@ -102,12 +102,6 @@
                 </thead>
                 <tbody id="usuarios"></tbody>
             </table>
-            <form id="formulario">
-                <input type="text" id="nombre" placeholder="Nombre">
-                <input type="text" id="usoDispensador" placeholder="Uso del dispensador">
-                <input type="number" id="numeroTarjeta" placeholder="Número de tarjeta">
-                <input type="submit" value="Agregar Usuario">
-            </form>
         </div>
     </main>
     <script>
@@ -128,7 +122,7 @@
             var verMasLink = document.createElement("a");
             verMasLink.textContent = "Ver más";
             verMasLink.className = "ver-mas";
-            verMasLink.href = "C:\Users\x\Desktop\proyectos\ECO-FOLIO\resources\views\Usuario; 
+            verMasLink.href = "otra_pagina.html?usuario=" + encodeURIComponent(nombre); 
             verMasTd.appendChild(verMasLink);
             usuarioRow.appendChild(verMasTd);
 
@@ -149,17 +143,15 @@
             }
         }
 
-        function handleSubmit(event) {
-            event.preventDefault();
-            var nombre = document.getElementById("nombre").value;
-            var usoDispensador = document.getElementById("usoDispensador").value;
-            var numeroTarjeta = document.getElementById("numeroTarjeta").value;
-
-            var intentosRestantes = actualizarIntentosRestantes(numeroTarjeta);
-            agregarUsuario("123", nombre, usoDispensador, numeroTarjeta, intentosRestantes);
+        function tarjetaNFCdetectada(numeroTarjeta) {
+            document.getElementById("numeroTarjeta").value = numeroTarjeta;
         }
 
-        document.getElementById("formulario").addEventListener("submit", handleSubmit);
+        document.addEventListener("DOMContentLoaded", function() {
+            setTimeout(function() {
+                tarjetaNFCdetectada("1234567890"); 
+            }, 1500);
+        });
     </script>
 </body>
 </html>
