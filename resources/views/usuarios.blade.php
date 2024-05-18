@@ -206,7 +206,7 @@ tbody tr
                         <td>     {{ $usuario->usos }}</td>
                         <td>     {{ $usuario->tarjeta }}</td>
                         <td>     {{ $usuario->intentos }}</td>
-                        <td><a href="\usuario\[[$usuario->$id]]"> Ver más</a>  </td>
+                        <td><a href="\usuario\{{$usuario->$id}}"> Ver más</a>  </td>
                     </tr>
                 
 
