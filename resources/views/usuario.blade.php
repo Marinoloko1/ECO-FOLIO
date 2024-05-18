@@ -120,7 +120,6 @@
                         <th>     {{ $usuario->tarjeta }}</th>
                         <th>     {{ $usuario->nombre }}</th>
                         <th>Uso del dispensador</th>
-                        <th></th>
                         <th>Intentos restantes</th>
                         <th><a href="/usuarios/{{$usuario->id}}">Ver más</a>  </th>
                     </tr>
