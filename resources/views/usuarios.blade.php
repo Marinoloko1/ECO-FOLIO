@@ -94,16 +94,14 @@ nav a:nth-child(5):hover~span
     margin: 110px auto 50px auto; 
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 150);
-    background: #1D976C;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #93F9B9, #1D976C);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #93F9B9, #1D976C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 255);
+    background-color: rgba(0, 0, 0, .4);
 }
 
 h1 {
     font-size: 24px;
     margin-bottom: 20px;
-    color: black; 
+    color: white; 
 }
 
 table {
@@ -119,7 +117,7 @@ th, td {
 }
 
 th {
-    background-color: lightgrey;
+    background-color: rgba(180, 180, 180, 10);
 }
 
 input[type="text"],
@@ -156,13 +154,18 @@ input[type="submit"]:hover {
 }
 #logo 
 {
-    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 255));
     color: rgba(255, 0, 0, 1);
 }
 tbody tr 
 {
     background-color: white;
     color: black;
+}
+
+#derechos
+{
+    position: center;
 }
     </style>
 </head>
@@ -186,7 +189,7 @@ tbody tr
             <table>
                 <thead>
                     <tr>
-                        <th>ID</th>
+                        <th>Grupo</th>
                         <th>Nombre del usuario</th>
                         <th>Uso del dispensador</th>
                         <th>N. de tarjeta</th>
@@ -198,12 +201,12 @@ tbody tr
                 <tbody>
                 @foreach($usuarios as $usuario)
                     <tr>
-                        <th>ID</th>
-                        <th>     {{ $usuario->nombre }}</th>
-                        <th>     {{ $usuario->usos }}</th>
-                        <th>     {{ $usuario->tarjeta }}</th>
-                        <th>     {{ $usuario->intentos }}</th>
-                        <th><a href="/usuarios/{{$usuario->id}}">Ver más</a>  </th>
+                        <td>     {{ $usuario->grupo}}</td>
+                        <td>     {{ $usuario->nombre }}</td>
+                        <td>     {{ $usuario->usos }}</td>
+                        <td>     {{ $usuario->tarjeta }}</td>
+                        <td>     {{ $usuario->intentos }}</td>
+                        <td><a href="/usuario{{$usuario->id}}">Ver más</a>  </td>
                     </tr>
                
 
@@ -213,6 +216,9 @@ tbody tr
         </div>
     </main>
 
+    <div id="derechos">
+        <p class="m-0" style="color: white">&#169; DERECHOS RESERVADOS POR ECO-FOLIO</p>
+    </div>
 
 </body>
 </html>

@@ -19,13 +19,12 @@
         }
 
         .container {
-            max-width: 900px;
-            margin: 50px auto;
-            background: #1D976C;  /* fallback for old browsers */
-            background: -webkit-linear-gradient(to left, #93F9B9, #1D976C);  /* Chrome 10-25, Safari 5.1-6 */
-            background: linear-gradient(to left, #93F9B9, #1D976C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 150);
+            max-width: 1100px;
+            margin: 110px auto 50px auto; 
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 255);
+            background-color: rgba(0, 0, 0, .4);
         }
 
         h1 {
@@ -87,7 +86,7 @@
         }
         #logo 
         {
-            filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
+            filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 255));
             color: rgba(255, 0, 0, 1);
         }
         tbody tr 
