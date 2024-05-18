@@ -27,7 +27,7 @@
         h1 {
             font-size: 24px;
             margin-bottom: 20px;
-            color: #333;
+            color: #4CAF50; 
         }
 
         table {
@@ -59,14 +59,14 @@
         }
 
         input[type="submit"] {
-            background-color: #4CAF50;
+            background-color: #4CAF50; 
             color: white;
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
 
         input[type="submit"]:hover {
-            background-color: #45a049;
+            background-color: #45a049; 
         }
     </style>
 </head>
@@ -74,7 +74,7 @@
     <header></header>
     <main>
         <div class="container">
-            <h1>Usuarios</h1>
+            <h1>Registro de Usuarios</h1>
             <table>
                 <thead>
                     <tr>
