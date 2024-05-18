@@ -139,6 +139,8 @@
         }
 
         agregarUsuario("123", "Maria Fernanda", "1 de 3", "1234567890");
+        agregarUsuario("123", "Angel Escamilla", "1 de 3", "1234567890");
+        agregarUsuario("123", "Juan Gallardo", "1 de 3", "1234567890");
     </script>
 </body>
 </html>
