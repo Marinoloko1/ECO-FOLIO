@@ -108,13 +108,26 @@
             <table>
                 <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>Nombre del usuario</th>
-                        <th>Uso del dispensador</th>
                         <th>N. de tarjeta</th>
+                        <th>Nombre del usuario</th>
+                        <th>Matricula</th>
+                        <th>N. de usos</th>
                     </tr>
                 </thead>
-                <tbody id="usuarios"></tbody>
+                <tbody>
+                @foreach($usuarios as $usuario)
+                    <tr>
+                        <th>     {{ $usuario->tarjeta }}</th>
+                        <th>     {{ $usuario->nombre }}</th>
+                        <th>Uso del dispensador</th>
+                        <th></th>
+                        <th>Intentos restantes</th>
+                        <th><a href="/usuarios/{{$usuario->id}}">Ver más</a>  </th>
+                    </tr>
+               
+
+                @endforeach
+                </tbody>
             </table>
         </div>
     </main>
