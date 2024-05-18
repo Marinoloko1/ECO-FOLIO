@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\RegistroController;
+use App\Http\Controllers\PaginaController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
