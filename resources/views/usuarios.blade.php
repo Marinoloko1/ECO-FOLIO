@@ -11,8 +11,8 @@
         body {
             font-family: Arial, sans-serif;
             background: #1D976C;  /* fallback for old browsers */
-            background: -webkit-linear-gradient(to right, #93F9B9, #1D976C);  /* Chrome 10-25, Safari 5.1-6 */
-            background: linear-gradient(to right, #93F9B9, #1D976C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            background: -webkit-linear-gradient(to top, #93F9B9, #1D976C);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to top, #93F9B9, #1D976C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
             margin: 0;
             padding: 0;
         }
@@ -21,8 +21,8 @@
             max-width: 800px;
             margin: 50px auto;
             background: #1D976C;  /* fallback for old browsers */
-            background: -webkit-linear-gradient(to bottom, #93F9B9, #1D976C);  /* Chrome 10-25, Safari 5.1-6 */
-            background: linear-gradient(to bottom, #93F9B9, #1D976C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            background: -webkit-linear-gradient(to left, #93F9B9, #1D976C);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to left, #93F9B9, #1D976C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(255, 255, 255, 10);
@@ -108,68 +108,25 @@
                         <th>Ver más</th>
                     </tr>
                 </thead>
-                <tbody id="usuarios"></tbody>
+
+                <tbody>
+                @foreach($usuarios as $usuario)
+                    <tr>
+                        <th>ID</th>
+                        <th>     {{ $usuario->nombre }}</th>
+                        <th>Uso del dispensador</th>
+                        <th>     {{ $usuario->tarjeta }}</th>
+                        <th>Intentos restantes</th>
+                        <th><a href="/usuarios/{{$usuario->id}}">Ver más</a>  </th>
+                    </tr>
+               
+
+                @endforeach
+                </tbody>
             </table>
         </div>
     </main>
-    <script>
-        var registroTarjetas = {};
 
-        function agregarUsuario(id, nombre, usoDispensador, numeroTarjeta, intentosRestantes) 
-        {
-            var usuariosTbody = document.getElementById("usuarios");
 
-            var usuarioRow = document.createElement("tr");
-            var datosUsuario = [id, nombre, usoDispensador, numeroTarjeta, intentosRestantes];
-            datosUsuario.forEach(function(dato) 
-            {
-                var td = document.createElement("td");
-                td.textContent = dato;
-                usuarioRow.appendChild(td);
-            });
-
-            var verMasTd = document.createElement("td");
-            var verMasLink = document.createElement("a");
-            verMasLink.textContent = "Ver más";
-            verMasLink.className = "ver-mas";
-            verMasLink.href = "C:\Users\x\Desktop\proyectos\ECO-FOLIO\resources\views\usuario.blade.php" + encodeURIComponent(nombre);
-            verMasTd.appendChild(verMasLink);
-            usuarioRow.appendChild(verMasTd);
-
-            usuariosTbody.appendChild(usuarioRow);
-
-            if (intentosRestantes <= 0) 
-            {
-                usuarioRow.style.backgroundColor = "#ffcccc"; 
-            }
-        }
-
-        function actualizarIntentosRestantes(numeroTarjeta) 
-        {
-            if (registroTarjetas[numeroTarjeta]) 
-            {
-                registroTarjetas[numeroTarjeta]--;
-                return registroTarjetas[numeroTarjeta];
-            } else 
-            {
-                registroTarjetas[numeroTarjeta] = 3;
-                return registroTarjetas[numeroTarjeta];
-            }
-        }
-
-        function tarjetaNFCdetectada(numeroTarjeta) 
-        {
-            document.getElementById("numeroTarjeta").value = numeroTarjeta;
-
-            document.getElementById("formulario").submit();
-        }
-
-        document.addEventListener("DOMContentLoaded", function() 
-        {
-            setTimeout(function() {
-                tarjetaNFCdetectada("1234567890");
-            }, 1500);
-        });
-    </script>
-</body>
+    </body>
 </html>
