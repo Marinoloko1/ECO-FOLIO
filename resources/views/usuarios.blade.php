@@ -31,7 +31,7 @@
         h1 {
             font-size: 24px;
             margin-bottom: 20px;
-            color: #4CAF50; 
+            color: black; 
         }
 
         table {
