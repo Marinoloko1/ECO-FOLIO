@@ -3,6 +3,7 @@
     <head>
         <title> "Usuarios"</title>
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
         <link rel="stylesheet" href="css/bootstrap.css">
         <script type="module" src="js/bootstrap.js"></script>
     </head>
