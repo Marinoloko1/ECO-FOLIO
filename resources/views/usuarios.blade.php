@@ -82,11 +82,19 @@
         .ver-mas:hover {
             color: #0056b3;
         }
+        #logo 
+        {
+            filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
+            color: rgba(255, 0, 0, 1);
+        }
     </style>
 </head>
 <body>
-    <header></header>
+    <header>
+        <h1><img src="https://aplicacionesinternas.cecyteg.edu.mx:8084/CentroServicio/logo.php"width="500" id="logo"></h1>
+    </header>
     <main>
+
         <div class="container">
             <h1>Registro de Usuarios</h1>
             <table>
