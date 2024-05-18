@@ -188,9 +188,6 @@ nav a:nth-child(5):hover~span
 
     <main>
         <div class="container">
-            <br>
-            <h1>Registro de Usuarios</h1>
-
             <table>
                 <thead>
                     <tr>
