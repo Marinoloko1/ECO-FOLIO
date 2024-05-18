@@ -77,7 +77,7 @@ input[type="submit"]:hover
                 <div class="row">
                     <div class="col">
                         <h1> ID: </h1>
-                        <img src="https://aplicacionesinternas.cecyteg.edu.mx:8084/CentroServicio/logo.php" alt="Logo del cecyte" style="position: absolute; top: 0; right: 5; width: 500px;">
+                        <img src="https://aplicacionesinternas.cecyteg.edu.mx:8084/CentroServicio/logo.php" alt="Logo del cecyte" style="position: absolute; top: 0; right: 1.9; width: 300px;">
                     </div>
 
                     <div class="col">
