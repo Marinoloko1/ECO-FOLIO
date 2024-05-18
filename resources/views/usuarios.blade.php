@@ -122,7 +122,7 @@
             var verMasLink = document.createElement("a");
             verMasLink.textContent = "Ver más";
             verMasLink.className = "ver-mas";
-            verMasLink.href = "C:\Users\x\Desktop\proyectos\ECO-FOLIO\resources\views\usuario.blade.php" + encodeURIComponent(nombre); 
+            verMasLink.href = "C:\Users\x\Desktop\proyectos\ECO-FOLIO\resources\views\usuario.blade.php" + encodeURIComponent(nombre);
             verMasTd.appendChild(verMasLink);
             usuarioRow.appendChild(verMasTd);
 
@@ -138,21 +138,22 @@
                 registroTarjetas[numeroTarjeta]--;
                 return registroTarjetas[numeroTarjeta];
             } else {
-                registroTarjetas[numeroTarjeta] = 2; 
+                registroTarjetas[numeroTarjeta] = 3;
                 return registroTarjetas[numeroTarjeta];
             }
         }
 
         function tarjetaNFCdetectada(numeroTarjeta) {
             document.getElementById("numeroTarjeta").value = numeroTarjeta;
+
+            document.getElementById("formulario").submit();
         }
 
         document.addEventListener("DOMContentLoaded", function() {
             setTimeout(function() {
-                tarjetaNFCdetectada("1234567890"); 
+                tarjetaNFCdetectada("1234567890");
             }, 1500);
         });
-        agregarUsuario("123", "Maria Fernanda", "1 de 3", "1234567890");
     </script>
 </body>
 </html>
