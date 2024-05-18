@@ -10,10 +10,9 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: #1D976C;  /* fallback for old browsers */
-            background: -webkit-linear-gradient(to right, #93F9B9, #1D976C);  /* Chrome 10-25, Safari 5.1-6 */
-            background: linear-gradient(to right, #93F9B9, #1D976C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+            background: #52c234;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #061700, #52c234);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #061700, #52c234); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
             margin: 0;
             padding: 0;
         }
@@ -21,13 +20,12 @@
         .container {
             max-width: 800px;
             margin: 50px auto;
-            background: #1D976C;  /* fallback for old browsers */
-            background: -webkit-linear-gradient(to right, #93F9B9, #1D976C);  /* Chrome 10-25, Safari 5.1-6 */
-            background: linear-gradient(to right, #93F9B9, #1D976C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+            background: #52c234;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #061700, #52c234);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #061700, #52c234); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 255, 0, 150);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 10);
         }
 
         h1 {
@@ -74,9 +72,15 @@
         input[type="submit"]:hover {
             background-color: #45a049; 
         }
-        agregarUsuario.
-        {
-            color: white;
+
+        .ver-mas {
+            cursor: pointer;
+            color: #007bff;
+            text-decoration: underline;
+        }
+
+        .ver-mas:hover {
+            color: #0056b3;
         }
     </style>
 </head>
@@ -92,40 +96,70 @@
                         <th>Nombre del usuario</th>
                         <th>Uso del dispensador</th>
                         <th>N. de tarjeta</th>
+                        <th>Intentos restantes</th>
+                        <th>Ver más</th>
                     </tr>
                 </thead>
                 <tbody id="usuarios"></tbody>
             </table>
+            <form id="formulario">
+                <input type="text" id="nombre" placeholder="Nombre">
+                <input type="text" id="usoDispensador" placeholder="Uso del dispensador">
+                <input type="number" id="numeroTarjeta" placeholder="Número de tarjeta">
+                <input type="submit" value="Agregar Usuario">
+            </form>
         </div>
     </main>
     <script>
         var registroTarjetas = {};
 
-        function agregarUsuario(id, nombre, usoDispensador, numeroTarjeta) {
+        function agregarUsuario(id, nombre, usoDispensador, numeroTarjeta, intentosRestantes) {
             var usuariosTbody = document.getElementById("usuarios");
 
             var usuarioRow = document.createElement("tr");
-            var datosUsuario = [id, nombre, usoDispensador, numeroTarjeta];
+            var datosUsuario = [id, nombre, usoDispensador, numeroTarjeta, intentosRestantes];
             datosUsuario.forEach(function(dato) {
                 var td = document.createElement("td");
                 td.textContent = dato;
                 usuarioRow.appendChild(td);
             });
+
+            var verMasTd = document.createElement("td");
+            var verMasLink = document.createElement("a");
+            verMasLink.textContent = "Ver más";
+            verMasLink.className = "ver-mas";
+            verMasLink.href = "C:\Users\x\Desktop\proyectos\ECO-FOLIO\resources\views\Usuario; 
+            verMasTd.appendChild(verMasLink);
+            usuarioRow.appendChild(verMasTd);
+
             usuariosTbody.appendChild(usuarioRow);
 
-            if (registroTarjetas[numeroTarjeta]) {
-                registroTarjetas[numeroTarjeta]++;
-                if (registroTarjetas[numeroTarjeta] >= 3) {
-                    alert("Ha alcanzado el máximo de usos por hoy.");
-                }
-            } else {
-                registroTarjetas[numeroTarjeta] = 1;
+            if (intentosRestantes <= 0) {
+                usuarioRow.style.backgroundColor = "#ffcccc"; 
             }
         }
 
-        agregarUsuario("123", "Maria Fernanda", "1 de 3", "1234567890");
-        agregarUsuario("123", "Maria Fernanda", "2 de 3", "1234567890");
-        agregarUsuario("123", "Maria Fernanda", "3 de 3", "1234567890");
+        function actualizarIntentosRestantes(numeroTarjeta) {
+            if (registroTarjetas[numeroTarjeta]) {
+                registroTarjetas[numeroTarjeta]--;
+                return registroTarjetas[numeroTarjeta];
+            } else {
+                registroTarjetas[numeroTarjeta] = 2; 
+                return registroTarjetas[numeroTarjeta];
+            }
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            var nombre = document.getElementById("nombre").value;
+            var usoDispensador = document.getElementById("usoDispensador").value;
+            var numeroTarjeta = document.getElementById("numeroTarjeta").value;
+
+            var intentosRestantes = actualizarIntentosRestantes(numeroTarjeta);
+            agregarUsuario("123", nombre, usoDispensador, numeroTarjeta, intentosRestantes);
+        }
+
+        document.getElementById("formulario").addEventListener("submit", handleSubmit);
     </script>
 </body>
 </html>
