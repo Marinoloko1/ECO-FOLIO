@@ -92,21 +92,7 @@
     <main>
         <div class="container">
             <div class="row">
-                <div class="col">
-                    <h1> ID: </h1>
-                </div>
-
-                <div class="col">
-                    <h1> Nombre del usuario: </h1>
-                </div>
-
-                <div class="col">
-                    <h1> Uso del dispensador: </h1>
-                </div>
-
-                <div class="col">
-                    <h1> N. de tarjeta: </h1>
-                </div>
+                
             </div>
 
             <div id="usuarios"></div>
