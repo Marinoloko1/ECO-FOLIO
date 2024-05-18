@@ -47,7 +47,7 @@
         }
 
         th {
-            background-color: #f2f2f2;
+            background-color: lightgrey;
         }
 
         input[type="text"],
@@ -87,6 +87,11 @@
             filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
             color: rgba(255, 0, 0, 1);
         }
+        tbody tr 
+        {
+            background-color: white;
+            color: black;
+        }
     </style>
 </head>
 <body>
@@ -105,7 +110,7 @@
                         <th>Uso del dispensador</th>
                         <th>N. de tarjeta</th>
                         <th>Intentos restantes</th>
-                        <th>Ver más</th>
+                        <th>Más detalles</th>
                     </tr>
                 </thead>
 
@@ -116,7 +121,7 @@
                         <th>     {{ $usuario->nombre }}</th>
                         <th>Uso del dispensador</th>
                         <th>     {{ $usuario->tarjeta }}</th>
-                        <th>Intentos restantes</th>
+                        <th>     {{ $usuario->usos }}</th>
                         <th><a href="/usuarios/{{$usuario->id}}">Ver más</a>  </th>
                     </tr>
                

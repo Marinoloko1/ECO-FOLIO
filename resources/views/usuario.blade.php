@@ -90,6 +90,10 @@
             filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
             color: rgba(255, 0, 0, 1);
         }
+        tbody tr 
+        {
+        background-color: white;
+        }
     </style>
 </head>
 <body>
@@ -98,10 +102,8 @@
     </header>
 
     <header></header>
-    <h1>{{$usuario->nombre}}</h1>
 
     <main>
-        <button id="regresar" href="\usuario\[[$usuario->all]]"> Regresar </button>
         <div class="container">
             <h1>Registro de Usuarios</h1>
 
@@ -112,21 +114,19 @@
                         <th>Nombre del usuario</th>
                         <th>Matricula</th>
                         <th>N. de usos</th>
+                        <th></th>
                     </tr>
                 </thead>
-                <tbody>
-                @foreach($usuario as $usuarios)
-                    <tr>
-                        <th>     {{ $usuario->tarjeta }}</th>
-                        <th>     {{ $usuario->nombre }}</th>
-                        <th>Uso del dispensador</th>
-                        <th>Intentos restantes</th>
-                        <th><a href="/usuarios/{{$usuario->id}}">Ver más</a>  </th>
-                    </tr>
-               
+            <tbody>
+                <tr>
+                    <td>{{ $usuario->tarjeta }}</td>
+                    <td>{{ $usuario->nombre }}</td>
+                    <td>{{ $usuario->matricula }}</td>
+                    <td>{{ $usuario->usos }}</td>
+                    <td><a href="/usuarios{{$usuario->all}}">Regresar</a></td>
+                </tr>
+            </tbody>
 
-                @endforeach
-                </tbody>
             </table>
         </div>
     </main>
