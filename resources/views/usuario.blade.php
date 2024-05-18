@@ -91,9 +91,11 @@
     </style>
 </head>
 <body>
-    <header></header>
+    <header> 
+    <img src="logo" style= "width:200px; height:200px;">
+    </header>
     <main>
-        <button id="regresar" href="\resources\views\usuario.blade.php"> Regresar </button>
+        <button id="regresar" href="\usuario\[[$usuario->all]]"> Regresar </button>
         <div class="container">
             <h1>Registro de Usuarios</h1>
 
