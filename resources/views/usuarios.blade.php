@@ -69,12 +69,12 @@ input[type="submit"]:hover
 </style>
 
     <body>
-        <header>
-        <img src="https://aplicacionesinternas.cecyteg.edu.mx:8084/CentroServicio/logo.php" alt="Logo del cecyte">
-        </header>
+        <header></header>
 
         <main>
-
+            <div>
+            <img src="https://aplicacionesinternas.cecyteg.edu.mx:8084/CentroServicio/logo.php" alt="Logo del cecyte">
+            </div>
             <div class="container">
                 <div class="row">
                     <div class="col">
