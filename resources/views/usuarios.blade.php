@@ -1,121 +1,98 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Usuarios</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <script type="module" src="js/bootstrap.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+            font-family: Arial, sans-serif;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
-
-<style>
-    body   
-    {
-        font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
-    }
-
-    .container 
-    {
-        max-width: 800px;
-        margin: 50px auto;
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-
-    h1
-    {
-        font-size: 24px;
-        margin-bottom: 20px;
-        color: #333;
-    }
-
-    .row 
-    {
-        margin-bottom: 20px;
-    }
-
-    .col 
-    {
-        padding: 10px;
-    }
-
-    input[type="text"], input[type="number"] 
-    {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        box-sizing: border-box;
-        margin-bottom: 10px;
-    }
-
-    input[type="submit"] 
-    {
-        background-color: #4CAF50;
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-
-    input[type="submit"]:hover 
-    {
-        background-color: #45a049;
-    }
-
-    table 
-    {
-        width: 100%;
-        border-collapse: collapse;
-    }
-
-    th, td 
-    {
-        border: 1px solid #dddddd;
-        text-align: left;
-        padding: 8px;
-    }
-
-    th 
-    {
-        background-color: #f2f2f2;
-    }
-</style>
-
 <body>
     <header></header>
-
     <main>
         <div class="container">
-            <div class="row">
-                
-            </div>
-
-            <div id="usuarios"></div>
+            <h1>Usuarios</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre del usuario</th>
+                        <th>Uso del dispensador</th>
+                        <th>N. de tarjeta</th>
+                    </tr>
+                </thead>
+                <tbody id="usuarios"></tbody>
+            </table>
         </div>
     </main>
-
     <script>
-        var registroTarjetas = {}; 
+        var registroTarjetas = {};
 
         function agregarUsuario(id, nombre, usoDispensador, numeroTarjeta) {
-            var usuariosDiv = document.getElementById("usuarios");
-
-            var tabla = document.createElement("table");
-            tabla.classList.add("usuarios-table");
-
-            var encabezados = ["ID", "Nombre del usuario", "Uso del dispensador", "N. de tarjeta"];
-            var encabezadosRow = document.createElement("tr");
-            encabezados.forEach(function(encabezado) {
-                var th = document.createElement("th");
-                th.textContent = encabezado;
-                encabezadosRow.appendChild(th);
-            });
-            tabla.appendChild(encabezadosRow);
+            var usuariosTbody = document.getElementById("usuarios");
 
             var usuarioRow = document.createElement("tr");
             var datosUsuario = [id, nombre, usoDispensador, numeroTarjeta];
@@ -124,14 +101,12 @@
                 td.textContent = dato;
                 usuarioRow.appendChild(td);
             });
-            tabla.appendChild(usuarioRow);
-
-            usuariosDiv.appendChild(tabla);
+            usuariosTbody.appendChild(usuarioRow);
 
             if (registroTarjetas[numeroTarjeta]) {
                 registroTarjetas[numeroTarjeta]++;
                 if (registroTarjetas[numeroTarjeta] >= 3) {
-                    alert("A alcanzado el maximo de usos por hoy.");
+                    alert("Ha alcanzado el máximo de usos por hoy.");
                 }
             } else {
                 registroTarjetas[numeroTarjeta] = 1;
