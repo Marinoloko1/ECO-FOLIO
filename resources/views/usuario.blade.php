@@ -10,9 +10,10 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: #1D976C;  /* fallback for old browsers */
-            background: -webkit-linear-gradient(to top, #93F9B9, #1D976C);  /* Chrome 10-25, Safari 5.1-6 */
-            background: linear-gradient(to top, #93F9B9, #1D976C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            background-image: url("https://www.xtrafondos.com/wallpapers/resized/hoja-verde-con-gotas-11773.jpg?s=large");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
             margin: 0;
             padding: 0;
         }
@@ -93,12 +94,95 @@
         {
         background-color: white;
         }
+
+        menu
+{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 10;
+}
+nav
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: #222;
+    border-radius: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+nav a
+{
+    position: relative;
+    display: inline-block;
+    font-size: 1em;
+    font-weight: 500;
+    color: white;
+    text-decoration: none;
+    padding: 0 23px;
+    z-index: 1;
+}
+
+nav span
+{
+    position: absolute;
+    top: 0;
+    left: 450px;
+    width: 95px;
+    height: 100%;
+    background: linear-gradient(45deg, #194b4f, #33fffc);
+    border-radius: 0px;
+    transition: 0.5s;
+}
+
+nav a:nth-child(1):hover~span
+{
+    left: 450px;
+}
+
+nav a:nth-child(2):hover~span
+{
+    left: 540px;
+}
+
+nav a:nth-child(3):hover~span
+{
+    left: 630px;
+}
+
+nav a:nth-child(4):hover~span
+{
+    left: 720px;
+}
+
+nav a:nth-child(5):hover~span
+{
+    left: 810px;
+}
+
     </style>
 </head>
 <body>
     <header> 
     <h1><img src="https://aplicacionesinternas.cecyteg.edu.mx:8084/CentroServicio/logo.php"width="500" id="logo"></h1>
     </header>
+
+    <nav>
+        <a href="" id="menu">Inicio</a>
+        <a href="">Inicio</a>
+        <a href="">Inicio</a>
+        <a href="">Inicio</a>
+        <span></span>
+    </nav> 
+
 
     <header></header>
 
