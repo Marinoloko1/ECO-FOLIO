@@ -111,13 +111,14 @@ table {
 }
 
 th, td {
-    border: 1px solid #dddddd;
+    border: 1px solid rgba(0, 0, 0, 0.4);
     text-align: left;
     padding: 8px;
 }
 
 th {
-    background-color: rgba(180, 180, 180, 10);
+    background-color: rgba(0, 0, 0, 0.1);
+    color: white;
 }
 
 input[type="text"],
@@ -125,7 +126,7 @@ input[type="number"],
 input[type="submit"] {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 10px solid rgba(0, 0, 0, 10);
     border-radius: 5px;
     box-sizing: border-box;
     margin-bottom: 10px;
@@ -145,12 +146,12 @@ input[type="submit"]:hover {
 
 .ver-mas {
     cursor: pointer;
-    color: #007bff;
+    color: white;
     text-decoration: underline;
 }
 
 .ver-mas:hover {
-    color: #0056b3;
+    color: white;
 }
 #logo 
 {
@@ -159,8 +160,8 @@ input[type="submit"]:hover {
 }
 tbody tr 
 {
-    background-color: white;
-    color: black;
+    background-color: rgba(0, 0, 0, 0.1);
+    color: white;
 }
 
 #derechos
@@ -170,10 +171,7 @@ tbody tr
     </style>
 </head>
 <body>
-    <header>
-        <h1><img src="https://aplicacionesinternas.cecyteg.edu.mx:8084/CentroServicio/logo.php" width="500" id="logo"></h1>
-    </header>
-
+    
     <nav>
         <a href="" id="menu">Inicio</a>
         <a href="">Inicio</a>
@@ -181,6 +179,9 @@ tbody tr
         <a href="">Inicio</a>
         <span></span>
     </nav> 
+    <header>
+        <h1><img src="https://aplicacionesinternas.cecyteg.edu.mx:8084/CentroServicio/logo.php" width="450" id="logo" style="position: center"></h1>
+    </header>
 
     <main>
 
@@ -206,7 +207,7 @@ tbody tr
                         <td>     {{ $usuario->usos }}</td>
                         <td>     {{ $usuario->tarjeta }}</td>
                         <td>     {{ $usuario->intentos }}</td>
-                        <td><a href="/usuarios/{{$usuario->id}}"> Ver más</a>  </td>
+                        <td><a href="/usuarios/{{$usuario->id}}" style="color: white"> Ver más</a>  </td>
                     </tr>
                 
 

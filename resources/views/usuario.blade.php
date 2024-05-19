@@ -30,7 +30,7 @@
         h1 {
             font-size: 26px;
             margin-bottom: 26px;
-            color: #000000; 
+            color: white; 
         }
 
         table {
@@ -40,21 +40,28 @@
         }
 
         th, td {
-            border: 1px solid #dddddd;
+            border: 1px solid rgba(0, 0, 0, 0.1);
             text-align: left;
             padding: 8px;
         }
 
         th {
-            background-color: #f2f2f2;
+            background-color: rgba(0, 0, 0, 0.1);
+            color:white;
         }
+
+        tbody tr 
+        {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
 
         input[type="text"],
         input[type="number"],
         input[type="submit"] {
             width: 100%;
             padding: 10px;
-            border: 1px solid #ccc;
+            border: 1px solid rgba(0, 0, 0, 0.1);
             border-radius: 5px;
             box-sizing: border-box;
             margin-bottom: 10px;
@@ -91,7 +98,8 @@
         }
         tbody tr 
         {
-        background-color: white;
+        background-color: rgba(0, 0, 0, 0.1);
+        color: white;
         }
 
         menu
@@ -206,7 +214,7 @@ nav a:nth-child(5):hover~span
                     <td>{{ $usuario->matricula }}</td>
                     <td>{{ $usuario->usos }}</td>
                     <td>{{ $usuario->intentos }}</td>
-                    <td><a href="/usuarios{{$usuario->all}}">Regresar</a></td>
+                    <td><a href="/usuarios{{$usuario->all}}" style="color: white">Regresar</a></td>
                 </tr>
             </tbody>
 

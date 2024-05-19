@@ -20,7 +20,7 @@ class PaginaController extends Controller
 
     public function verUsuario($id)
     {
-        $usuarios = Usuario::find($id);
+        $usuario = Usuario::find($id);
         return view("usuario", ["usuario"=>$usuario]);
 
     }
