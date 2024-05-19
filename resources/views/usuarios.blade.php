@@ -11,7 +11,7 @@
 body 
 {
     font-family: Arial, sans-serif;
-    background-image: url("https://www.xtrafondos.com/wallpapers/resized/hoja-verde-con-gotas-11773.jpg?s=large");
+    background-image: url("https://www.xtrafondos.com/wallpapers/resized/pequeno-pueblo-en-las-montanas-11502.jpg?s=large");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -103,10 +103,10 @@ nav a:nth-child(5):hover~span
     }
 
 h1 {
-    font-size: 24px;
+    font-size: 30px;
     margin-bottom: 20px;
     color: white; 
-    position: center;
+    position: relative;
 }
 
 table {

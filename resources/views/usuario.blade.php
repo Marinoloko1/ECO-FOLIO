@@ -10,12 +10,10 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-image: url("https://www.xtrafondos.com/wallpapers/resized/hoja-verde-con-gotas-11773.jpg?s=large");
-            background-repeat: no-repeat;
+            background-image: url("https://www.xtrafondos.com/wallpapers/resized/paisaje-digital-en-atardecer-5846.jpg?s=large");
             background-size: cover;
             background-position: center;
-            margin: 0;
-            padding: 0;
+            height: 100vh; /* Cambiado a 100vh */
         }
 
         .container {
@@ -204,7 +202,7 @@ nav a:nth-child(5):hover~span
                     <tr>
                         <th>N. de tarjeta</th>
                         <th>Nombre del usuario</th>
-                        <th>Carrera</th>
+                        <th>Especialidad</th>
                         <th>Matricula</th>
                         <th>N. de usos</th>
                         <th>Intentos restantes</th>
