@@ -90,13 +90,17 @@ nav a:nth-child(5):hover~span
 }
 
 .container {
-    max-width: 700px;
-    margin: 110px auto 50px auto; 
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 255);
-    background-color: rgba(0, 0, 0, .4);
-}
+        position: relative;
+        top: 30px;
+        width: 700px;
+        margin: 0 auto;
+        border: 1px solid rgb(241, 241, 241);
+        border-radius: 12px;
+        padding: 10px 20px;
+        background: transparent;
+        backdrop-filter: blur(6px);
+        box-shadow: 10px 10px 15px 0 rgba(0, 0, 0, 0.5);
+    }
 
 h1 {
     font-size: 24px;
@@ -166,7 +170,9 @@ tbody tr
 
 #derechos
 {
-    position: center;
+    text-align: center; 
+    margin-top: 40px; 
+    color: white;
 }
     </style>
 </head>
@@ -176,11 +182,11 @@ tbody tr
         <a href="" id="menu">Inicio</a>
         <a href="">Inicio</a>
         <a href="">Inicio</a>
-        <a href="">Inicio</a>
         <span></span>
     </nav> 
+
     <header>
-        <h1><img src="https://aplicacionesinternas.cecyteg.edu.mx:8084/CentroServicio/logo.php" width="450" id="logo" style="position: center"></h1>
+        <h1><img src="https://aplicacionesinternas.cecyteg.edu.mx:8084/CentroServicio/logo.php" width="500" id="logo"></h1>
     </header>
 
     <main>
@@ -218,8 +224,9 @@ tbody tr
     </main>
 
     <div id="derechos">
-        <p class="m-0" style="color: white">&#169; DERECHOS RESERVADOS POR ECO-FOLIO</p>
+        <p class="m-0">&#169; DERECHOS RESERVADOS POR ECO-FOLIO</p>
     </div>
 
 </body>
 </html>
+

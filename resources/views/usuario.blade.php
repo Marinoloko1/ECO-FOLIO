@@ -19,12 +19,16 @@
         }
 
         .container {
-            max-width: 1100px;
-            margin: 110px auto 50px auto; 
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 255);
-            background-color: rgba(0, 0, 0, .4);
+            position: relative;
+            top: 30px;
+            width: 1200px;
+            margin: 0 auto;
+            border: 1px solid rgb(241, 241, 241);
+            border-radius: 12px;
+            padding: 10px 20px;
+            background: transparent;
+            backdrop-filter: blur(6px);
+            box-shadow: 10px 10px 15px 0 rgba(0, 0, 0, 0.5);
         }
 
         h1 {

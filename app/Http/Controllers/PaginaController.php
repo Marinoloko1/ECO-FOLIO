@@ -24,4 +24,11 @@ class PaginaController extends Controller
         return view("usuario", ["usuario"=>$usuario]);
 
     }
+
+    public function verRegistro()
+    {
+        $registro = Registro::fall();
+        return view("registro", ["registro"=>$registro]);
+
+    }
 }
