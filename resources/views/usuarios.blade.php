@@ -106,6 +106,7 @@ h1 {
     font-size: 24px;
     margin-bottom: 20px;
     color: white; 
+    position: center;
 }
 
 table {

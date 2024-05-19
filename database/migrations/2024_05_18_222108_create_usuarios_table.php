@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string("matricula");
             $table->integer("usos");
             $table->integer("intentos");
-
+            $table->integer("grupo");
         });
     }
 
